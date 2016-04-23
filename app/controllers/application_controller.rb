@@ -9,7 +9,7 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate_user
-    redirect_to '/login' unless current_user
+    redirect_to '/log_in' unless current_user
   end
 
 end
