@@ -1,0 +1,26 @@
+%nav.navbar.navbar-default
+  .container-fluid
+    .navbar-header
+      %button.navbar-toggle.collapsed{"data-target" => "#bs-example-navbar-collapse-1", "data-toggle" => "collapse", :type => "button"}
+        %span.sr-only Toggle navigation
+        %span.icon-bar
+        %span.icon-bar
+        %span.icon-bar
+      %a.navbar-brand{:href => "#"}Url Shortner
+    #bs-example-navbar-collapse-1.collapse.navbar-collapse
+      - if current_user
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            %a
+              Hello
+              =current_user.uname
+          %li
+            =link_to "Url Shortner", new_short_url_path    
+          %li
+            =link_to "logout", logout_path
+      -else
+        %ul.nav.navbar-nav.navbar-right
+          %li
+            =link_to "login", log_in_path
+          %li
+            =link_to "signup", sign_up_path
