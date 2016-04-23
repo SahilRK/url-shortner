@@ -1,4 +1,6 @@
 class User < ActiveRecord::Base
+  has_many :short_urls
+  
   attr_accessor :password
   before_save :password_encrypt
 

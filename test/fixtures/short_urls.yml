@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  original_url: MyString
+  shorty: MyString
+  visit_counts: 1
+  user_id: 
+
+two:
+  original_url: MyString
+  shorty: MyString
+  visit_counts: 1
+  user_id: 

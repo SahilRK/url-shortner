@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :short_urls
+
   get "sign_up" => 'users#new', as: "sign_up"
   root "users#new"
   resources :users

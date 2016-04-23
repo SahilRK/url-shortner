@@ -1,0 +1,17 @@
+.form-wrapper.col-md-10
+  =form_for @short_url, url: {action: :create}, html: {class: "form-horizontal"} do |f|
+    - if @short_url.errors.any?
+      .error_messages
+        - @short_url.errors.full_messages.each do |message|
+          %div= message
+    %fieldset
+      %legend Url Shortner
+      = f.hidden_field :user_id, value: current_user.id
+      .form-group
+        .col-md-2
+          = f.label :original_url, "Original Url"
+        .col-md-8
+          = f.text_field :original_url, placeholder: "Enter the Original Url", class: "form-control"
+      .form-group
+        .col-lg-10.col-lg-offset-2
+          %button.btn.btn-primary{:type => "submit"} Generate Short Url
