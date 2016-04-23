@@ -1,0 +1,22 @@
+!!!
+%html
+  %head
+    %title UrlShortner
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+  %body
+    #user_nav
+      - if current_user
+        Hi
+        =current_user.uname
+        =link_to "logout", logout_path
+      - else
+        =link_to "login", log_in_path
+        =link_to "signup", sign_up_path
+
+
+    -flash.each do |name,message|
+      =content_tag :div, message, id: "flash_#{name}"
+
+    = yield
