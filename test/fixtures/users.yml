@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  uname: MyString
-  email: MyString
-  password_hash: MyString
-  password_salt: MyString
-  api_token: MyString
-
-two:
-  uname: MyString
-  email: MyString
-  password_hash: MyString
-  password_salt: MyString
-  api_token: MyString
+# one:
+#   uname: MyString
+#   email: MyString
+#   password_hash: MyString
+#   password_salt: MyString
+#   api_token: MyString
+#
+# two:
+#   uname: MyString
+#   email: MyString
+#   password_hash: MyString
+#   password_salt: MyString
+#   api_token: MyString
