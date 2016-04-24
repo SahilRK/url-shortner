@@ -6,6 +6,7 @@ class ShortVisitsController < ApplicationController
     @short_visit = ShortVisit.where(short_url_id: params[:id])
   end
 
+  #this method fetches short url entered by visitor and stores visitor location in short visits
   def short_original_url
     orig_url = ShortUrl.search_shorty(params[:short_url_id])
     if orig_url.exists?
@@ -19,6 +20,7 @@ class ShortVisitsController < ApplicationController
 
   private
 
+  #this method fetches the ip of visitor
   def find_remote_ip
     if request.remote_ip == "::1"
       '216.58.196.100'
@@ -27,6 +29,7 @@ class ShortVisitsController < ApplicationController
     end
   end
 
+  #this method fetches visitor details via a JSON request to below API
   def short_visit_location(visitor_ip)
     response = open("http://geoip.nekudo.com/api/#{visitor_ip}").read
     JSON.parse(response)

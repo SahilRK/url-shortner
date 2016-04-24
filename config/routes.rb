@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :homepages
 
   resources :short_urls
+  get "/:short_url_id" => "short_visits#short_original_url"
+  delete 'short_urls' => 'short_urls#destroy'
 
   get "sign_up" => 'users#new', as: "sign_up"
   resources :users
@@ -11,7 +13,6 @@ Rails.application.routes.draw do
   get "logout" => 'sessions#destroy', as: "logout"
   resources :sessions
 
-  get "/:short_url_id" => "short_visits#short_original_url"
   resources :short_visits
 
   # The priority is based upon order of creation: first created -> highest priority.
