@@ -1,8 +1,10 @@
 Rails.application.routes.draw do
+  root "homepage#index"
+  resources :homepages
+
   resources :short_urls
 
   get "sign_up" => 'users#new', as: "sign_up"
-  root "users#new"
   resources :users
 
   get "log_in" => 'sessions#new', as: "log_in"
