@@ -1,25 +1,30 @@
-%h1 Sign Up
-= form_for @user do |f|
-  - if @user.errors.any?
-    .error_messages
-      %h2 Form is invalid
-      %ul
-        - for message in @user.errors.full_messages
-          %li= message
-  %p
-    = f.label :uname
-    %br/
-    = f.text_field :uname
-  %p
-    = f.label :email
-    %br/
-    = f.text_field :email
-  %p
-    = f.label :password
-    %br/
-    = f.password_field :password
-  %p
-    = f.label :password_confirmation
-    %br/
-    = f.password_field :password_confirmation
-  %p.button= f.submit
+.container
+  .user_login_registration_container
+    .login-form-wrapper.col-md-4
+      .signup_login_form_wrapper
+        %h1 Sign Up
+        = form_for @user, html: {class: "form-horizontal custom-form"} do |f|
+          - if @user.errors.any?
+            .error_messages
+              %h2 Form is invalid
+              %ul
+                - for message in @user.errors.full_messages
+                  %li= message
+          .form-group
+            = f.label :uname, class: "control-label"
+            %br/
+            = f.text_field :uname, autofocus: true, class: "form-control"
+          .form-group
+            = f.label :email, class: "control-label"
+            %br/
+            = f.email_field :email, autofocus: true, class: "form-control"
+          .form-group
+            = f.label :password, class: "control-label"
+            %br/
+            = f.password_field :password, class: "form-control"
+          .form-group
+            = f.label :password_confirmation, class: "control-label"
+            %br/
+            = f.password_field :password_confirmation, class: "form-control"
+          .form-group
+            = f.submit class: "btn btn-primary custom-form-button"

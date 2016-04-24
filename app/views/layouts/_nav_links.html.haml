@@ -6,7 +6,7 @@
         %span.icon-bar
         %span.icon-bar
         %span.icon-bar
-      %a.navbar-brand{:href => "#"}Url Shortner
+      %a.navbar-brand{:href => "/"}Url Shortner
     #bs-example-navbar-collapse-1.collapse.navbar-collapse
       - if current_user
         %ul.nav.navbar-nav.navbar-right
@@ -15,7 +15,7 @@
               Hello
               =current_user.uname
           %li
-            =link_to "Url Shortner", new_short_url_path    
+            =link_to "Url Shortner", new_short_url_path
           %li
             =link_to "logout", logout_path
       -else
