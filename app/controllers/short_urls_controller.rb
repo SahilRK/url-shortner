@@ -18,6 +18,11 @@ class ShortUrlsController < ApplicationController
     @short_urls = current_user.short_urls
   end
 
+  def destroy
+    ShortUrl.find_by_id(params[:id]).destroy
+    redirect_to short_urls_path
+  end
+
   private
 
   def short_url_params

@@ -12,7 +12,10 @@
       %tr
         %td= url.id
         %td= url.original_url
-        %td= url.shorty
+        %td
+          = url.shorty
+          %p
+          = link_to "View Short Url", "http://localhost:3000/"+url.shorty, target: 'blank', class: "btn btn-primary"
         %td= url.visit_counts
         %td= link_to "Show Visitors", short_visit_path(id: url.id), class: "btn btn-primary"
-        %td= link_to "Delete", short_urls_path(short_url_id: url.id), :method => :delete, class: "btn btn-danger"
+        %td= link_to "Delete", short_urls_path(id: url.id),data: {confirm: "Are you sure?"}, method: :delete, class: "btn btn-danger"

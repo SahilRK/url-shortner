@@ -1,6 +1,6 @@
 class User < ActiveRecord::Base
-  has_many :short_urls
-  
+  has_many :short_urls, dependent: :destroy
+
   attr_accessor :password
   before_save :password_encrypt
 
@@ -9,13 +9,14 @@ class User < ActiveRecord::Base
   validates_presence_of :email, on: :create
   validates_uniqueness_of :email
 
+  #this method encrypts user password using password digest
   def password_encrypt
     if password.present?
       self.password_salt = BCrypt::Engine.generate_salt
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)
     end
   end
-
+  
   def self.authenticate_user(email,password)
     log_in_user = find_by_email(email)
     if log_in_user && log_in_user.password_hash == BCrypt::Engine.hash_secret(password, log_in_user.password_salt)
