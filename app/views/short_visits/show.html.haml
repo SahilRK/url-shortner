@@ -1,0 +1,14 @@
+%table.table.table-striped.table-hover
+  %thead
+    %tr
+      %th Visitor ID
+      %th Visitor IP
+      %th Visitor City
+      %th Visit Country Code
+  %tbody
+    -@short_visit.each do |visitor|
+      %tr
+        %td= visitor.id
+        %td= visitor.visitor_ip
+        %td= visitor.visitor_city
+        %td= visitor.visitor_country_iso2
