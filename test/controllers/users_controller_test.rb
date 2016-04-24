@@ -12,7 +12,7 @@ class UsersControllerTest < ActionController::TestCase
       post :create, user: {uname: "url-test-user", email: "usl-user@email.com", password: "url-user"}
     end
 
-    assert_redirected_to users_path
+    assert_redirected_to log_in_path
   end
 
   #tests invalid user
