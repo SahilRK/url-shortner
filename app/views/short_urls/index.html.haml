@@ -14,5 +14,5 @@
         %td= url.original_url
         %td= url.shorty
         %td= url.visit_counts
-        %td= link_to "Show Visitors", "", class: "btn btn-primary"
+        %td= link_to "Show Visitors", short_visit_path(id: url.id), class: "btn btn-primary"
         %td= link_to "Delete", short_urls_path(short_url_id: url.id), :method => :delete, class: "btn btn-danger"
