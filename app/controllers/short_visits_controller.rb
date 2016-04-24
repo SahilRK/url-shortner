@@ -1,5 +1,6 @@
 class ShortVisitsController < ApplicationController
   require 'open-uri'
+  before_filter :authenticate_user
 
   def show
     @short_visit = ShortVisit.where(short_url_id: params[:id])
