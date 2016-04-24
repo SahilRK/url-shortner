@@ -19,7 +19,7 @@ class ShortUrlsControllerTest < ActionController::TestCase
 
   test "should be able to create new url" do
     assert_difference('ShortUrl.count') do
-      post :create, short_url: {original_url: "www.google.com/test123", shorty: "err12", visit_counts: " ", user_id: "#{valid_user}"}
+      post :create, short_url: {original_url: "www.google.com/test123", shorty: "err12", visit_counts: "0", user_id: "#{valid_user}"}
     end
   end
 

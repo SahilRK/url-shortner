@@ -1,15 +1,15 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  visitor_ip: MyString
-  visitor_city: MyString
-  visitor_state: MyString
-  visitor_country_iso2: MyString
-  short_url_id: 
-
-two:
-  visitor_ip: MyString
-  visitor_city: MyString
-  visitor_state: MyString
-  visitor_country_iso2: MyString
-  short_url_id: 
+# one:
+#   visitor_ip: MyString
+#   visitor_city: MyString
+#   visitor_state: MyString
+#   visitor_country_iso2: MyString
+#   short_url_id:
+#
+# two:
+#   visitor_ip: MyString
+#   visitor_city: MyString
+#   visitor_state: MyString
+#   visitor_country_iso2: MyString
+#   short_url_id:
