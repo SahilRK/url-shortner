@@ -1,3 +1,25 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.user_login_registration_container{
+  background-color: #FFFFFF;
+  margin:0px;
+  padding:0px !important;
+  width:100% !important;
+  height:100vh;
+}
+
+.login-form-wrapper{
+  margin-left:35%;
+}
+.signup_login_form_wrapper h2{
+  color: #008CBA;
+}
+.custom-form{
+  padding: 0px !important;
+  .form-group{
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top:5px;
+  }
+}
